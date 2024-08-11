@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragmentWelcome">
+
+    <fragment
+        android:id="@+id/fragmentWelcome"
+        android:name="com.example.question.Fragment.FragmentWelcome"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_fragmentWelcome_to_fragmentQuestion1"
+            app:destination="@id/fragmentQuestion1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentQuestion1"
+        android:name="com.example.question.Fragment.FragmentQuestion1"
+        android:label="Question 1"
+        tools:layout="@layout/fragment_question1">
+        <action
+            android:id="@+id/action_fragmentQuestion1_to_fragmentQuestion2"
+            app:destination="@id/fragmentQuestion2" />
+        <argument
+            android:name="answer1"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentQuestion2"
+        android:name="com.example.question.Fragment.FragmentQuestion2"
+        android:label="Question 2"
+        tools:layout="@layout/fragment_question2">
+        <action
+            android:id="@+id/action_fragmentQuestion2_to_fragmentResults"
+            app:destination="@id/fragmentResults" />
+        <argument
+            android:name="answer1"
+            app:argType="string" />
+        <argument
+            android:name="answer2"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentResults"
+        android:name="com.example.question.Fragment.FragmentResults"
+        android:label="Results"
+        tools:layout="@layout/fragment_results">
+        <action
+            android:id="@+id/action_fragmentResults_to_fragmentWelcome"
+            app:destination="@id/fragmentWelcome" />
+    </fragment>
+</navigation>
